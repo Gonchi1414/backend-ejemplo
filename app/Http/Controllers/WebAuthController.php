@@ -32,4 +32,36 @@ class WebAuthController extends Controller
             'email' => 'Credenciales incorrectas',
         ]);
     }
+
+    public function showRegister()
+    {
+        return view('register');
+    }
+
+    public function register(Request $request)
+    {
+        $request->validate([
+            'nombres' => 'required|string|max:255',
+            'apellidos' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users',
+            'password' => 'required|string|min:6|confirmed',
+            'rol' => 'nullable|string|in:root,admin,user',
+            'estado' => 'nullable|string|in:activo,inactivo',
+        ]);
+
+        $user = User::create([
+            'nombres' => $request->nombres,
+            'apellidos' => $request->apellidos,
+            'fecha_nacimiento' => $request->fecha_nacimiento,
+            'email' => $request->email,
+            'password' => bcrypt($request->password),
+            'rol' => $request->input('rol', 'user'),
+            'estado' => $request->input('estado', 'activo'),
+        ]);
+
+        Auth::login($user);
+
+        // return redirect()->intended('dashboard');
+        return redirect('dashboard');
+    }
 }
