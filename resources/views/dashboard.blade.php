@@ -14,6 +14,10 @@
             <br>
             <small> Email: {{ auth()->user()->email }}</small>
         </div>
+        <form action="/logout" method="post" class="logout-form">
+            @csrf
+            <button type="submit" class="btn-logout">Cerrar Sesión</button>
+        </form>
     </header>
     <main class="dashboard-container">
         <h1>Bienvenido al Dashboard</h1>

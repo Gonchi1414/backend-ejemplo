@@ -6,6 +6,9 @@
     <title>Login</title>
 </head>
 <body>
+    <header class="login-header">
+        <a href="/">Volver a Inicio</a>
+    </header>
     <main class="login-container">
         <h1>Iniciar Sesión</h1>
         <form action="/login" method="post" class="login-form">

@@ -13,3 +13,5 @@ Route::post('/register', [WebAuthController::class, 'register'])->name('register
 Route::get('/register', [WebAuthController::class, 'showRegister'])->name('register.form');
 // Esto para dashBoard
 Route::get('/dashboard', [WebAuthController::class, 'showDashboard'])->name('dashboard');
+//logout
+Route::post('/logout', [WebAuthController::class, 'logout'])->name('logout');
