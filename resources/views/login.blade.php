@@ -6,7 +6,7 @@
     <title>Login</title>
 </head>
 <body>
-    <header class="login-header">
+    <header class="header-general">
         <a href="/">Volver a Inicio</a>
     </header>
     <main class="login-container">

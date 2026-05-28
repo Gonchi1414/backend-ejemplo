@@ -6,7 +6,7 @@
     <title>DashBoard</title>
 </head>
 <body>
-    <header class="dashboard-header">
+    <header class="header-general">
         <div class="user-info">
             <span>
                 Hola, {{ auth()->user()->nombres }}
