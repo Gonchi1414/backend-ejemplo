@@ -64,4 +64,9 @@ class WebAuthController extends Controller
         // return redirect()->intended('dashboard');
         return redirect('dashboard');
     }
+
+    public function showDashboard()
+    {
+        return view('dashboard');
+    }
 }
