@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DashBoard</title>
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+
 </head>
+
 <body>
     <header class="header-general">
         <div class="user-info">
@@ -16,7 +20,7 @@
         </div>
         <form action="/logout" method="post" class="logout-form">
             @csrf
-            <button type="submit" class="btn-logout">Cerrar Sesión</button>
+            <button type="submit" class="btn btn-logout">Cerrar Sesión</button>
         </form>
     </header>
     <main class="dashboard-container">
@@ -24,4 +28,5 @@
         <p>Esta es la página de inicio después de iniciar sesión.</p>
     </main>
 </body>
+
 </html>

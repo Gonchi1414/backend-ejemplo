@@ -5,13 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro de nuevos usuarios</title>
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
 <body>
     <header class="header-general">
-        <a href="/">Volver a Inicio</a>
+        <nav class="nav-menu">
+            <a class="btn btn-out" href="/">Volver a Inicio</a>
+        </nav>
     </header>
-    <main class="register-container">
+    <main class="container register-container">
         <h1>Registro de nuevos usuarios</h1>
         <form action="/register" method="post" class="register-form">
             @csrf
@@ -40,7 +43,7 @@
                 <label for="password_confirmation">Confirmar Contraseña:</label>
                 <input type="password" id="password_confirmation" name="password_confirmation" required>
             </div>
-            <button type="submit" class="btn-register">Registrar</button>
+            <button type="submit" class="btn btn-register">Registrar</button>
         </form>
         <br>
         <p>¿Ya tienes una cuenta? <a href="/login">Inicia sesión aquí</a></p>

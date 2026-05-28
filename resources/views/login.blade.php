@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
+
 <body>
     <header class="header-general">
         <a href="/">Volver a Inicio</a>
@@ -24,17 +27,18 @@
             </div>
             <button type="submit" class="btn-submit">Iniciar Sesión</button>
             @if ($errors->any())
-                <div class="error-messages">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
+            <div class="error-messages">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
             @endif
             <p>¿No tienes una cuenta? <a href="/register">Regístrate aquí</a></p>
         </form>
 
-</main>
+    </main>
 </body>
+
 </html>
