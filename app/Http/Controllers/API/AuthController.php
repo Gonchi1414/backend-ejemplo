@@ -25,15 +25,20 @@ class AuthController extends Controller
         if ($rol ==='root' && User::where('rol', 'root')->exists()) {
             return response()->json(['error' => 'Ya existe un usuario con rol root'], 403);
         }
-        $user = User::create([
-            'nombres' => $request->input('nombres'),
-            'apellidos' => $request->input('apellidos'),
-            'email' => $request->input('email'),
-            'password' => bcrypt($request->input('password')),
-            'rol' => $rol,
-            'estado' => $request->input('estado', 'activo'),
-        ]);
-        return response()->json(['status' => 'User created successfully', 'user' => $user], 201);
+        try {
+            $user= User::create([
+                'nombres' => $request->nombres,
+                'apellidos' => $request->apellidos,
+                'fecha_nacimiento' => $request->fecha_nacimiento,
+                'email' => $request->email,
+                'password' => bcrypt($request->password),
+                'rol' => $rol,
+                'estado' => $request->input('estado', 'activo'),
+            ]);
+            return response()->json(['status' => 'User created successfully', 'user' => $user], 201);
+        } catch (\Exception $e) {
+            return response()->json(['error' => 'Error al crear el usuario: ' . $e->getMessage()], 500);
+        }
     }
     public function login(Request $request)
     {

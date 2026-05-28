@@ -41,7 +41,7 @@ class User extends Authenticatable
                 }
             }
         });
-
+        //para actualizar al usuario
         static::updating(function (User $user) {
             if ($user->getOriginal('rol') == 'root') {
                 abort(403, 'No se puede modificar el rol de un usuario root.');
@@ -53,7 +53,7 @@ class User extends Authenticatable
                 }
             }
         });
-
+        //para eliminar al usuario
         static::deleting(function (User $user) {
             if ($user->rol === 'root' || $user->getOriginal('rol') === 'root') {
                 abort(403, 'No se puede eliminar un usuario con rol root.');
