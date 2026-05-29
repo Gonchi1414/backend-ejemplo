@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WebAuthController;
+use App\Http\Controllers\WebUserController;
 Route::get('/', function () {
     return view('welcome');
 });
@@ -15,3 +16,5 @@ Route::get('/register', [WebAuthController::class, 'showRegister'])->name('regis
 Route::get('/dashboard', [WebAuthController::class, 'showDashboard'])->name('dashboard');
 //logout
 Route::post('/logout', [WebAuthController::class, 'logout'])->name('logout');
+// Rutas para gestión de usuarios (solo para admin)
+Route::resource('users', WebUserController::class);

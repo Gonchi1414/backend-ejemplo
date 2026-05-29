@@ -94,6 +94,12 @@ h1 {
     margin-bottom: 1.5rem;
     color: #ffffff;
 }
+h2 {
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    color: #ffffff;
+}
 
 p {
     color: #a3a3a3;
@@ -212,4 +218,96 @@ form {
     list-style: none;
     color: #fca5a5;
     font-size: 0.85rem;
+}
+
+.admin-layout{
+    flex-direction: row;;
+}
+.sidebar {
+    width: 200px;
+    background: #1e1e1e;
+    border-right: 1px solid #333333;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.sidebar-header{
+    padding: 8px;
+    border-bottom: #c5c5c5 solid 1px;
+}
+.sidebar-nav{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.sidebar-nav a {
+    padding: 0.5rem 1rem;
+    background: #3669f52a;
+    border-radius: 4px;
+    color: #ffffff;
+}
+.sidebar-nav a:hover,
+.sidebar-nav a.active {
+    background: #000000;
+    color: #ffffff;
+    border-left: 4px solid #3669f5;
+}
+.main-content {
+    flex: 1;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    height: 100vh;
+}   
+.form-container-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.table-container{
+    border: 1px solid #333333;
+    border-radius: 8px;
+    padding: 2rem;
+    width: 100%;
+    overflow-x: auto;
+    align-self: center;
+}
+.table-header{
+    display: flex;
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    color: #ffffff;
+    justify-content: space-between;
+}
+.table-content{
+    width: 100%;
+    border-collapse: collapse;
+}
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.data-table th,
+.data-table td {
+    border: 1px solid #333333;
+    padding: 0.75rem;
+    text-align: left;
+    color: #ffffff;
+}
+.data-table th {
+    background: #3d3d3d;
+}
+.data-table tbody tr:hover {
+    background: #2a2a2a;
+}
+.actions {
+    display: flex;
+    gap: 0.5rem;
+}
+.actions:hover {
+    scale: 1.02;
 }
