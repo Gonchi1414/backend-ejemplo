@@ -10,7 +10,9 @@
 
 <body>
     <header class="header-general">
-        <a href="/">Volver a Inicio</a>
+        <div class="left">
+            <a href="/" class="btn btn-out">Volver a Inicio</a>
+        </div>
     </header>
     <main class="login-container">
         <h1>Iniciar Sesión</h1>

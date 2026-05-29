@@ -10,9 +10,9 @@
 
 <body>
     <header class="header-general">
-        <nav class="nav-menu">
+        <div class="left">
             <a class="btn btn-out" href="/">Volver a Inicio</a>
-        </nav>
+        </div>
     </header>
     <main class="container register-container">
         <h1>Registro de nuevos usuarios</h1>

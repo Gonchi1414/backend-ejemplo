@@ -10,7 +10,8 @@
 
 <body>
     <header class="header-general">
-        <nav class="nav-menu">
+        <div class="left"></div>
+        <nav class="right nav-menu">
             <a class="btn btn-register" href="/register">Registro</a>
             <a class="btn btn-login" href="/login">Ingresar</a>
         </nav>

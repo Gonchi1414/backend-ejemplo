@@ -11,17 +11,19 @@
 
 <body>
     <header class="header-general">
-        <div class="user-info">
+        <div class="user-info left">
             <span>
                 Hola, {{ auth()->user()->nombres }}
             </span>
             <br>
             <small> Email: {{ auth()->user()->email }}</small>
         </div>
-        <form action="/logout" method="post" class="logout-form">
-            @csrf
-            <button type="submit" class="btn btn-logout">Cerrar Sesión</button>
-        </form>
+        <div class="right">
+            <form action="/logout" method="post" class="logout-form">
+                @csrf
+                <button type="submit" class="btn btn-logout">Cerrar Sesión</button>
+            </form>
+        </div>
     </header>
     <main class="dashboard-container">
         <h1>Bienvenido al Dashboard</h1>
